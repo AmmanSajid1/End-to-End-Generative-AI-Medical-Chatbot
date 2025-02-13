@@ -23,7 +23,7 @@ embed_model = download_hugging_face_embedding_model()
 
 index_name = "medicalbot"
 
-# Load existing index 
+# Load docs from existing index 
 docsearch = PineconeVectorStore.from_existing_index(
     index_name=index_name,
     embedding=embed_model
