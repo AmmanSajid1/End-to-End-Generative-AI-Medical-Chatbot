@@ -5,9 +5,9 @@ WORKDIR /app
 COPY . /app 
 
 # Upgrade pip first, then install dependencies  
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip uninstall -y pinecone-plugin-inference || true \
+RUN pip install --no-cache-dir --upgrade pip \ 
     && pip install --no-cache-dir -r requirements.txt \
+    && pip uninstall -y pinecone-plugin-inference || true \
     && pip install --no-cache-dir --upgrade pinecone langchain
 
 CMD ["python3", "app.py"]
